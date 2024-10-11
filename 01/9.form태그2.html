@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    input {
+      padding : .5em;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+  form 태그 
+    text : 
+    password 
+    radio 
+    checkbox 
+    submit : 전송버튼
+
+    reset
+    button
+    file
+    hidden
+
+    ※ 가상 키패드를 맞춰서 해줌 (핸드폰으로 했을 경우 티남)
+    email : 유효성검사를 자동으로 해줌
+    url : 유효성검사를 자동으로 해줌
+    tel  
+
+    기능들을 없애는 방법
+    novalidate
+
+
+    required
+    min max step
+    minlength maxlength
+    placeholder vs value
+  -->
+  <form >
+    <fieldset>
+      <legend>type 속성</legend>
+      <p>아이디 <input type="text" name="id" placeholder="id를입력하세요" maxlength="3" required></p>
+      <p>비밀번호 <input type="password" name="pw" required></p>
+      <!-- 자체적인 초기화 버튼이 생긴다. 굳이 사용x -->
+      <p>검색 <input type="search" name="search" value="검색어"></p>
+      <p>이메일 <input type="email" name="email"></p>
+      <p>url <input type="url" name="url"></p>
+      <p>전화번호 <input type="tel" name="tel"></p>
+      <p>숫자 <input type="number" name="number" min="1" max="10" step="2"></p>
+      <hr>
+      <p>범위 <input type="range" name="ragne" min="2" max="6" step="2" value="2"></p>
+      <p>시간 <input type="time" name="time"></p>
+      <p>날짜 <input type="date" name="date"></p>
+      <p>시간/날짜 <input type="datetime-local" name="datetime-local"></p>
+      <p>달 <input type="month" name="month" min="2024-10" max="2025-09"></p>
+      <p>주 <input type="week" name="week"></p>
+      <p>색상 <input type="color" name="color"></p>
+      <button>전송</button>
+    </fieldset>
+  </form>
+</body>
+</html>
