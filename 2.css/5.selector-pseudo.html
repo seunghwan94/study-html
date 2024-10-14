@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 전역 설정으로 많이 사용한다. */
+    
+    /* 1.가상클래스 */
+    /* 처음 색 */
+    a:link {color: green;}
+    /* 한번 클릭했을때 색상 */
+    a:visited {color: aqua;}
+    /* 마우스 오버 */
+    a:hover {color: brown;}
+    /* 마우스 누르고 있는 상태 */
+    a:active {color: orange;}
+    /* tab 누르고 있는 상태 */
+    a:focus {color: deeppink;}
+
+    /* 2.가상요소 */
+    /* 첫번째 요소, 마지막요소, n번째 자식, n번째 타입, 이전, 이후 */
+    div :first-child {color: red;}
+    div :last-child {color: blue;}
+    /* 요소중 2의 배수번째 -> 자식들만 가지고 선택*/
+    div p:nth-child(2n) {color: green;}
+    /* 요소중 뒤에서부터 진행 (odd:홀수(2n+1), even:짝수(2n))*/
+    div p:nth-last-child(odd) {color: deeppink;}
+    /* type 중에 2의 배수 번째 -> p태그만 가지고 선택*/
+    div p:nth-of-type(2n) {color: purple;}
+    /* type 중에 뒤에서부터 3의 배수 번째 -> p태그만 가지고 선택*/
+    div p:nth-last-of-type(3n) {color: orange;}
+    
+    /* 모든 p태그 앞에 접두사 넣기 */
+    p::before {content: '접두사';}
+    /* 모든 p태그 앞에 접미사 넣기 */
+    p::after {content: '접미사';}
+
+    div.cls#id {}
+  </style>
+</head>
+<body>
+  <p><a href="#">가상 클래스</a></p>  
+
+  <div>
+    <h1>가상요소</h1>
+    <p>문단1</p>
+    <p>문단2</p>
+    <p>문단3</p>
+    <p>문단4</p>
+    <p>문단5</p>
+    <p>문단6</p>
+  </div>
+</body>
+</html>

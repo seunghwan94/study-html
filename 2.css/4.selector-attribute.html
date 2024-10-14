@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* title 전체 선택 */
+    [title] {color: red;}
+    /* write라는 단어 선택 */
+    [title='write'] {text-decoration: line-through;}
+    /* write라는 단어가 포함된 title 속성 선택 (다)*/
+    [title*='write'] {background: green;}
+    /* write라는 단어가 포함된 title 속성 선택 (구분자 : -) */
+    [title|='write'] {text-indent: 100px;}
+    /* write라는 단어가 포함된 title 속성 선택 (구분자 : 공백) */
+    [title~='write'] {font-size: 3em;}
+  </style>
+</head>
+
+<body>
+  <h3 title="header">제목</h3>
+  <p title="write addr">주소록 작성</p>
+  <p title="write-tel">전화번호</p>
+  <p title="write">건강기록부 작성</p>
+  <p class="write">금전출납부 작성</p>
+</body>
+</html>
