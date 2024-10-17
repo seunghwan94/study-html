@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {
+      display: inline-block;
+      border: 1px solid;
+      perspective: 500px;
+    }
+    .trans1:hover img{
+      transform: translate(10px,50px);
+    }
+    .rotate:hover img{
+      transform: rotate(30deg);
+    }
+    .rotateX:hover img{
+      transform: rotateX(45deg);
+    }
+    .rotateY:hover img{
+      transform: rotateY(45deg);
+    }
+
+    .scale:hover img {
+      transform: scale(2, .5);
+    }
+    .skew:hover img {
+      transform: skew(30deg, 20deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap trans1"><img src="../img/groot.jpg"></div>
+  <div class="wrap rotate"><img src="../img/groot.jpg"></div>
+  <div class="wrap rotateX"><img src="../img/groot.jpg"></div>
+  <div class="wrap rotateY"><img src="../img/groot.jpg"></div>
+  <div class="wrap scale"><img src="../img/groot.jpg"></div>
+  <div class="wrap skew"><img src="../img/groot.jpg"></div>
+</body>
+</html>

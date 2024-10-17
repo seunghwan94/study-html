@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    img {margin: 50px;}
+    @keyframes groot {
+      from { transform: rotate(0); }
+      to { transform: rotate(360deg); }
+    }
+    #groot {
+      animation-name: groot;
+      animation-duration: 2s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    } 
+
+  </style>
+</head>
+<body>
+  <a href="https://www.daum.net" target="_parent">다음</a>
+  <img id="groot" src="../img/groot.jpg" alt="groot">
+</body>
+</html>

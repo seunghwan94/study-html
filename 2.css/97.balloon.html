@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .wrap {background-color: yellow; padding: 30px} 
+    .balloon {
+      position: relative;
+      /* display: inline-block; */
+      border: #222 solid 10px;
+      max-width: 400px;
+      padding: 30px;
+      /* color: #; */
+      background-color: #eee;
+      border-radius: 50px;
+      margin: 80px;
+    }
+    .balloon::after {
+      position: absolute;
+      bottom: -35px;
+      display: block;
+      content: '';
+      
+      border: 10px solid transparent;
+      /* border-color: red gray green orange; */
+      border-top: 25px solid #222;
+      margin-left: 50px; 
+      width: 0;
+      transform: skewX(-30deg);
+    }
+    .me::after {
+       transform: skewX(30deg);
+    }
+
+    
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="balloon">가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라</div>
+    <div class="balloon me">가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라가나다라</div>
+    <!-- <div class="tri"></div> -->
+  </div>
+</body>
+</html>
