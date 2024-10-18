@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>레이아웃연습</title>
+  <style>
+    
+    .clearfix::after{display: block;content: "";clear: both;}
+    body {padding: 0;margin: 0;}
+    header, footer {text-align: center;background-color: #fc3;padding: 16px;}
+    main {max-width: 1280px; margin: 0 auto;}
+    /* nav 영역 */
+    ul {padding: 0; list-style: none; margin:0; }
+    .gnb {background-color: #222;}
+    .gnb > div {
+      position: absolute;width: 1280px;height: 300px;background-color: #222;
+      display: none;
+    }
+    .gnb > ul > li {float: left; margin: 16px 40px;}
+    .gnb > ul > li > a {color:#eee; text-decoration: none;}
+    .gnb > ul > li > a:hover {
+      color: #fc3;
+      text-shadow: 0 0 3px #eee;
+    }
+    .gnb li ul {display: none;position: relative;}
+    .gnb ul:hover ul ul, .gnb:hover div {display: block;}
+    .gnb ul ul {position: absolute; background-color: skyblue; top: 35px; z-index:99;}
+
+    /* main 영역 */
+    main > div {min-height: calc(100vh - 241px);}
+    .content, .side{margin:10px; padding: 10px; float: left;}
+    .contents {width: 800px;}
+    .side {width: 400px;}
+    .side p {margin-bottom: 5px;}
+    .side label {font-size: 12px;}
+    .side input,.side button {padding: 8px;margin-bottom: 20px; width: 200px; box-sizing: border-box;}
+
+    .popup { position: absolute; top: 200px; left: calc(50% - 210px);}
+    img {display: block;}
+    .backgrounddiv {background-color: skyblue; padding:5px;}
+    .left {margin:0; float: left;}
+    a {float: right; text-decoration: none; color: #eee;}
+    
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <h1>제목</h1>
+    </header>
+    <main>
+      <nav class="gnb">
+        <ul class="clearfix">
+
+          <li><a href="#">menu1</a>
+            <ul>
+              <li><a href="#">sub1</a></li>
+              <li><a href="#">sub2</a></li>
+              <li><a href="#">sub3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu2</a>
+            <ul>
+              <li><a href="#">sub1</a></li>
+              <li><a href="#">sub2</a></li>
+              <li><a href="#">sub3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu3</a>
+            <ul>
+              <li><a href="#">sub1</a></li>
+              <li><a href="#">sub2</a></li>
+              <li><a href="#">sub3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">menu4</a>
+            <ul>
+              <li><a href="#">sub1</a></li>
+              <li><a href="#">sub2</a></li>
+              <li><a href="#">sub3</a></li>
+            </ul>
+          </li>
+        </ul>
+        <div></div>
+      </nav>
+      <div class="clearfix">
+        <section class="side">
+          <h2>메인컨텐츠</h2>
+          <p>text</p>
+          <p>text</p>
+          <p>text</p>
+          <p>text</p>
+          <p>text</p>
+          <p>text</p>
+        </section>
+        <aside class="side">
+          <form>
+            <p><label for="id">id</label></p>
+            <input name="id" id="id" placeholder="아이디 입력해라">
+            <p><label for="pw">pw</label></p>
+            <input name="pw" id="pw" type="password" placeholder="비번 입력해라">
+            <br>
+            <button>로그인</button>
+          </form>
+          <ul>
+            <li>광고1</li>
+            <li>광고2</li>
+            <li>광고3</li>
+            <li>광고4</li>
+          </ul>
+        </aside>
+      </div>
+    </main>
+    
+    <footer>
+      꼬릿말
+    </footer>
+  </div>
+  <div class="popup">
+    <img src="https://image.yes24.com/momo/scmfiles/AdvertFiles/202410/2578206_241014101146.jpg">
+    <div class="backgrounddiv clearfix">
+      <p class="left">오늘 하루 그만 보기 <input type="checkbox"></p>
+      <a href="#">닫기</a>
+    </div>
+  </div>
+</body>
+</html>

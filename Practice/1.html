@@ -12,10 +12,12 @@
       main nav {background-color: lightblue;}
       ul {padding:0; margin: 0;}
       ul a {text-decoration: none; color:#222;font-weight: bold;}
-      .title-menu {position: relative;display: inline-block; padding:10px 40px;}
-      .sub-menu { padding:10px 30px;}
-      .title-menu ul { display: none;}
-      .title-menu:hover ul {display: block;}
+      .title-menu li { display: inline; padding:10px 40px; list-style: none; }
+      .sub-menu { padding:10px 20px; list-style: none; display: inline-block;}
+      .sub-menu li{ padding: 10px 27px;}
+      .sub-menu:hover li{ padding: 10px 27px;}
+      /* .title-menu ul { display: none; position: absolute;}
+      .title-menu:hover ul { display: block; list-style: none; background-color: lightblue; left: 15px;} */
       
       
     </style>
@@ -27,31 +29,28 @@
     </header>
     <main>
       <nav>
-        <ul>
-          <li class="title-menu"><a href="#">menu1</a>
-            <ul>
-              <li class="sub-menu"><a href="#">sub1</a></li>
-              <li class="sub-menu"><a href="#">sub2</a></li>
-              <li class="sub-menu"><a href="#">sub3</a></li>
-              <li class="sub-menu"><a href="#">sub4</a></li>
-            </ul>
-          </li>
-          <li class="title-menu"><a href="#">menu2</a>
-            <ul>
-              <li class="sub-menu"><a href="#">sub1</a></li>
-              <li class="sub-menu"><a href="#">sub2</a></li>
-              <li class="sub-menu"><a href="#">sub3</a></li>
-              <li class="sub-menu"><a href="#">sub4</a></li>
-            </ul>
-          </li>
-          <li class="title-menu"><a href="#">menu1</a>
-            <ul>
-              <li class="sub-menu"><a href="#">sub1</a></li>
-              <li class="sub-menu"><a href="#">sub2</a></li>
-              <li class="sub-menu"><a href="#">sub3</a></li>
-              <li class="sub-menu"><a href="#">sub4</a></li>
-            </ul>
-          </li>
+        <ul class="title-menu">
+          <li><a href="#">menu1</a></li>
+          <li><a href="#">menu2</a></li>
+          <li><a href="#">menu1</a></li>
+        </ul>
+        <ul class="sub-menu">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+          <li><a href="#">sub4</a></li>
+        </ul>
+        <ul class="sub-menu">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+          <li><a href="#">sub4</a></li>
+        </ul>
+        <ul class="sub-menu">
+          <li><a href="#">sub1</a></li>
+          <li><a href="#">sub2</a></li>
+          <li><a href="#">sub3</a></li>
+          <li><a href="#">sub4</a></li>
         </ul>
       </nav>
     </main>
