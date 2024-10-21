@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h3 id = "time"></h3>
+  <script>
+    var id = document.getElementById("time");
+    // setInterval
+    var retInter = setInterval(() => {
+      id.innerHTML = new Date();
+      setTimeout
+    }, 1000);
+
+    var anonyFunc = function(){
+      clearInterval(retInter);
+    }
+    setTimeout(anonyFunc,10000);
+
+    setTimeout(function() {
+      clearInterval(retInter);
+    },10000);
+
+    console.log(this);
+  </script>
+</body>
+</html>

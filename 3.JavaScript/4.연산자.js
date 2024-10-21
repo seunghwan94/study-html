@@ -24,22 +24,4 @@ console.log(0/0, 3/0);
 // 문자열 >> 빈문자열
 // 숫자 >> 0
 // 객체 >> null
-
-
 console.log(num, typeof num);
-
-function f(x){
-  x();
-}
-function call(){
-  console.log("call");
-}
-
-f(call);
-
-function f2(){
-  return () => {
-    console.log("haha");
-  }
-}
-f2()();

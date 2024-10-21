@@ -3,13 +3,11 @@
 // 배열 리터럴
 var arr = [];
 
-// 배열 길이로 선언
+// 배열 길이로 선언 (생성자)
 var arr = new Array(10);
 
 // 10 과 20을 값으로 가지는 2칸의 배열
 var arr = new Array(10,20,"str",[1,2,3],{x:2,y:3});
-
-
 
 console.log(arr);
 // 특정 값 가져오는 방법
@@ -33,3 +31,5 @@ arr.reverse();
 console.log(arr);
 arr.sort();
 console.log(arr);
+
+
