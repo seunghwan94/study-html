@@ -8,26 +8,21 @@
       body {margin: 0;padding:0;}
       header h1, footer {background-color: skyblue; margin: 0; padding: 24px; text-align: center;}
       
-      main {max-width: 1280px;margin: 0 auto; height: calc(100vh - 230px);}
-      main nav {background-color: lightblue;}
+      main {max-width: 1280px; margin: 0 auto; height: calc(100vh - 230px);}
+      header nav {background-color: lightblue; padding: 20px 0px}
       ul {padding:0; margin: 0;}
       ul a {text-decoration: none; color:#222;font-weight: bold;}
-      .title-menu li { display: inline; padding:10px 40px; list-style: none; }
-      .sub-menu { padding:10px 20px; list-style: none; display: inline-block;}
+      .title-menu li { display: inline; padding:10px 40px; }
+
+      .sub-menu { padding:10px 20px; list-style: none; display: none; }
       .sub-menu li{ padding: 10px 27px;}
-      .sub-menu:hover li{ padding: 10px 27px;}
-      /* .title-menu ul { display: none; position: absolute;}
-      .title-menu:hover ul { display: block; list-style: none; background-color: lightblue; left: 15px;} */
-      
-      
+      nav:hover .sub-menu { display: inline-block; }
     </style>
 </head>
 <body>
   <div class="wrap">
     <header>
       <h1>제목</h1>
-    </header>
-    <main>
       <nav>
         <ul class="title-menu">
           <li><a href="#">menu1</a></li>
@@ -53,6 +48,9 @@
           <li><a href="#">sub4</a></li>
         </ul>
       </nav>
+    </header>
+    <main>
+      
     </main>
     <footer>
       <p> copyright &copy; all rights reserved</p>
