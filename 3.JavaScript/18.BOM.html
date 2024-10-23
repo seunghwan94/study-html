@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let a = 10;
+    function f(){
+
+    }
+    document.write("<pre>");
+      for(let i in window){
+        document.write(window[i]);
+      }
+    document.write("</pre>")
+    winProxy = open('test', '', 'width = 400,height=400')
+    winProxy.moveTo(0,0);
+    setInterval(function(){
+      winProxy.moveBy(10,10);
+    }, 500);
+  </script>
+</head>
+<body>
+  <input id="linkAddr" value="https://www.name.com">
+  <button id="btn">이동</button>
+  <script>
+    document.getElementById("btn").addEventListener("click",function(){
+      const input = document.getElementById("linkAddr");
+      confirm(input.value + "의 위치로 이동할래?") && (location.href = input.value)
+
+    })
+  </script>
+</body>
+</html>

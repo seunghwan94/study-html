@@ -24,7 +24,7 @@
 
     let s;
 
-    s = navigator.geolocation.getCurrentPosition(function(position){
+    navigator.geolocation.getCurrentPosition(function(position){
       function inner(){
         return [position.coords.latitude, position.coords.longitude];
       }
