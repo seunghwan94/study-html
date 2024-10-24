@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    const xhr = new XMLHttpRequest();
+
+    // Method, URL, 비동기 여부
+    xhr.open('GET','88.student.xml');
+    xhr.send();
+
+    xhr.onload = function() {
+      // Server Status => 200 성공, 404 Found
+      // console.log(xhr);
+      if(xhr.status===200 && xhr.readyState==4){
+        // console.log(xhr.response,typeof xhr.response);
+        const xmlString = xhr.response;
+        const xmlParser = new DOMParser();
+        const xmlDoc = xmlParser.parseFromString(xmlString, "text/xml");
+        // console.log(xmlDoc);
+        const students = xmlDoc.getElementsByTagName("student");
+        
+        let str = "";
+        for (let i = 0 ; i < students.length; i++){
+          str += "<tr>";
+          str += `<td>${students[i].querySelector("no").textContent}</td>`;
+          str += `<td>${students[i].querySelector("name").textContent}</td>`;
+          str += `<td>${students[i].querySelector("socre").textContent}</td>`;
+          str += "</tr>";
+        }
+        document.querySelector("table").innerHTML += str;
+        
+      }else{
+        console.log('ajax 실패');
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>학번</th>
+      <th>이름</th>
+      <th>점수</th>
+    </tr>
+  </table>
+</body>
+</html>

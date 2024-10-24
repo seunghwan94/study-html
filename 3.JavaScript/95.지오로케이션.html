@@ -23,14 +23,15 @@
     // }
 
     let s;
-
-    navigator.geolocation.getCurrentPosition(function(position){
+    let f = function(position){
       function inner(){
+        console.log(position);
         return [position.coords.latitude, position.coords.longitude];
       }
       return inner;
-    }());
-
+    }
+    navigator.geolocation.getCurrentPosition(f);
+    
     console.log(s);
 
     // console.log())

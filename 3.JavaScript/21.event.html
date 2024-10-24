@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="console.log(this.innerText)">인라인</button>
+  <button>기본</button>
+  <script>
+    const btn = document.querySelector("button:nth-child(2)");
+    console.log(btn);
+    btn.onclick = function(){
+      console.log(this.innerText);
+    }
+    btn.onclick = function(){
+      alert(this.innerText);
+      this.onclick=null;
+    }
+    const fn = function(e){
+      console.log(event === e);
+      // alert('test');
+      btn.removeEventListener('click',fn); // 다이나믹 바인딩 때문에 사용가능 fn
+    }
+
+
+
+    btn.addEventListener('click');
+  </script>
+</body>
+</html>

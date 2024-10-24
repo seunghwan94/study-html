@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function(){
+      const list1 = document.querySelector("#box1 > ul > li");
+      const list2 = document.querySelectorAll("#box2 > ul > li");
+      console.log(list1);
+      console.log(list2);
+
+      list1.style.backgroundColor = 'gray';
+      list1.onclick = function(){
+        alert("hi");
+      }
+
+      const colors = ["red","blue", "green"];
+      for (const key in list2){
+        console.log(key, list2[key]);
+        if(list2[key].style)
+        list2[key].style.color = colors[key];
+      }
+
+      // 일반 엘리먼트 생성
+      const p = document.createElement("p");
+      const txt = document.createTextNode("p태그");
+      p.appendChild(txt);
+      p.id = "myP";
+      p.className = "color-red";
+      p.title = "동적 생성 태그";
+      p.setAttribute("뭔디.", "하얏");
+      p.setAttribute("data-no", 1);
+
+      list1.appendChild(p);
+      const img = document.createElement("img");
+      img.src = "../img/groot.jpg";
+
+      document.querySelector("body").appendChild(img);
+    }
+  </script>
+  <style>
+    .color-red { color: red;}
+  </style>
+</head>
+<body>
+  <div id="box1">
+    <ul>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+    </ul>
+  </div>
+  <div id="box2">
+    <ul>
+      <li>내용1</li>
+      <li>내용2</li>
+      <li>내용3</li>
+    </ul>
+  </div>
+</body>
+</html>

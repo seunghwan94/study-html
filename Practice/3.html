@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #wrap { max-width: 1024px; height: 500px; border: 1px solid; margin: 0 auto; position: relative;}
+    #x { background-color: gray; width: 1px; height: 500px; position: absolute;}
+    #y { background-color: gray; width: 1024px; height: 1px; position: absolute; }
+    .m { background-color: red; width: 100px; height: 100px; position: absolute; left:20px; top: 25px; z-index: -99; }
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="x"></div>
+    <div id="y"></div>
+    <div class="m"></div>
+  </div>
+
+  <script>
+      document.querySelector("#wrap").addEventListener("mousemove",function(e){
+        document.querySelector("#x").style.left = e.offsetX + "px";
+        document.querySelector("#y").style.top = e.offsetY + "px";
+        test(e.offsetX, e.offsetY);
+      });
+
+      function test(x,y){
+        document.querySelector("#wrap").addEventListener("click",function(e){
+          m = document.querySelector(".m");
+          let l = getComputedStyle(m).left.substring(0,getComputedStyle(m).left.indexOf("p"));
+          let t = getComputedStyle(m).top.substring(0,getComputedStyle(m).top.indexOf("p"));
+
+          // console.log("l : ", l);
+          if( l < y && y < Number(l)+100 && t < x && x < Number(t)+100){
+            console.log("l : ", l);
+            document.querySelector(".m").style.display = "none";
+          }
+        });
+      }
+      let cnt = 0;
+      setInterval(function(){
+        document.querySelector(".m").style.left = cnt++ + "px";
+        document.querySelector(".m").style.top = cnt++ + "px";
+      }, 50) // 1초
+
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    
+    
+    window.onload = function(){
+      function test(arr){
+        const select = document.createElement("select");
+        
+        for (let i = arr['start'] ; i < arr['end']; i++){
+          const option = document.createElement("option");
+          option.setAttribute('values', `${i}`);
+          if(i == 1994){
+            option.setAttribute('selected',"");
+          }
+          const p = document.createTextNode(`${i}${arr['day']}`);
+          option.appendChild(p);
+          select.appendChild(option);
+        }
+        
+        form.appendChild(select);
+      }
+
+      const form = document.createElement("form");
+      const h3 = document.createElement("h3");
+      const h3txt = document.createTextNode("생년월일 입력");
+      
+      const list = [
+        {
+          day : '월', 
+          start : 1,
+          end : 13
+        },{
+          day : '일', 
+          start : 1,
+          end : 31
+        },{
+          day : '년', 
+          start : 1900,
+          end : 2025
+        }
+      ]
+      h3.appendChild(h3txt);
+      form.appendChild(h3);
+
+      for (let arr in list){
+        test(list[arr]);
+      }
+      document.querySelector('body').appendChild(form);
+    }
+  </script>
+  <style>
+    form { max-width: 1024px; margin: 0 auto;text-align: center; }
+    select {
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  
+</body>
+</html>

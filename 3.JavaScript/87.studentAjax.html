@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function f(){
+      const xhr = new XMLHttpRequest();
+
+      // Method, URL, 비동기 여부
+      xhr.open('GET','87.student.json');
+      xhr.send();
+
+      xhr.onload = function() {
+        if(xhr.status===200 && xhr.readyState==4){
+          const students = JSON.parse(xhr.response);
+          let str = "";
+          for(let s of students){
+            str += "<tr>";
+            str += `<td>${s.no}</td>`;
+            str += `<td>${s.name}</td>`;
+            str += `<td>${s.score}</td>`;
+            str += "</tr>";
+          }
+          document.querySelector("table").innerHTML += str;
+        }else{
+          console.log('ajax 실패');
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <button onclick="f()">추가</button>
+  <table>
+    <tr>
+      <th>학번</th>
+      <th>이름</th>
+      <th>점수</th>
+    </tr>
+  </table>
+</body>
+</html>
