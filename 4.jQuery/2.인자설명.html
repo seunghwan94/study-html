@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      const text = document.getElementById("text");
+      text.style.color = 'blue';
+      $(text).css("color","green");
+      $(text)[0].style.color = 'red';
+
+      console.log($("p").length);
+      $("p").css('font-size',function(key,value){
+        return key % 2 ? '32px' : value;
+      });
+
+      // attr => key: value (속성을 가져오거나 변경하는 것)
+      // prop => 
+
+    });
+  </script>
+</head>
+<body>
+  <p id="text">헬로</p>
+  <p>헬로</p>
+  <p>가나다라</p>
+  <p>가나다라</p>
+  <p>가나다라</p>
+  <p>가나다라</p>
+</body>
+</html>

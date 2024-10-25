@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        body * {border: 1px solid; padding:10px; margin: 5px 0; background-color: white;}
+        .content > :nth-child(2), .content > :nth-child(3) {
+            background-color: lightgreen;
+        }
+    </style>
+    <script>
+        $(function(){
+            $("button").click(function(){
+                $(this).closest(".content > div")
+                    .nextUntil(":last-child")
+                    // .filter(":lt(2)")
+                    .css("background-color","skyblue") // 조상들을 타고 올라감
+
+                    .closest(".content")
+                    .find("button:last-child").css("color","red");
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header">
+            header
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content">
+                <!-- 1 -->
+                <div>
+                    <!-- 쇼핑/ 맨즈... -->
+                    <div>
+                        <ul>
+                            <il></il>
+                            <il></il>
+                            <il></il>
+                            <il></il>
+                        </ul>
+                    </div>
+                    <!-- 페이징 -->
+                    <div>
+                        1/13
+                        <button>&lt;</button>
+                        <button>&gt;</button>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div>
+                    <!-- 왼쪽 -->
+                    <div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <!-- 오른쪽 -->
+                    <div>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div>오늘의 혜택</div>
+                <!-- 4 -->
+                <div>footer</div>
+            </div>
+            <div class="side"> side </div>
+        </div>
+
+        <div class="footer">
+            footer
+        </div>
+    </div>
+
+</body>
+</html>

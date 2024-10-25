@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      
+      // css 방식
+      $("li:nth-child(3)").css("color","green");
+      // 체이닝 방식
+      $("li")
+        .css("font-weight","bold")    // li 모두 선택
+          .filter(":nth-child(4)")    // 1개만 선택
+          .css("color","red")
+          .text("변경")
+        .end()                        // 다시 li 모두 선택
+        .css("background","orange")
+          .eq(-2)                     // 뒤에서 2번째 선택 (일치하는 index 선택)
+          .css({fontSize:"2em"})
+        .end()
+          .filter(":gt(3):not(:nth-child(7))")  // 7번 빼고 3보다 큰 애들 선택
+          .css("text-decoration","underline");
+
+
+          // 똑같긴한데 약간 다름
+          $("input:text").css("width","50%"); // 최종적인 해석을 가지고 판단
+          $("input[type='text']").css("padding",".5em"); // 부여한 속성 값을 선택
+    });
+
+
+
+  </script>
+</head>
+<body>
+  <ol>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+    <li>목록</li>
+  </ol>
+  <input> 
+  <input type="text"> 
+  <input> 
+</body>
+</html>

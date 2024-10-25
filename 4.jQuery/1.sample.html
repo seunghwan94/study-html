@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    
+    // $ 이름 충돌로 인한 연결 끊기
+    // $.noConflict(); 
+    // $ 연결 끊어도 사용가능한 방법
+    (function($){
+      $(function(){
+        // 실행문 (선언과 동시에 실행)
+        console.log("$ 표시 사용 못할 시");
+      })
+    })(jQuery);
+
+    // console.log($, typeof $);
+    // console.log(jQuery, typeof jQuery, jQuery === $);
+    $(function(){
+      $('p').css({
+          'color':'red',
+          "text-decoration" : 'underline'
+        }).click(function(){
+          alert($(this).text());
+        }).hover(function(){
+          $(this).css('background','orange');
+        }, function(){
+          $(this).css('background','transparent')    
+        }
+      )
+    })
+    window.onload = function(){
+      jQuery("p").css("border", "1px solid black");
+    }
+    $(document).ready(function(){
+      console.log(1);
+    });
+    $().ready(function(){
+      console.log(2);
+    })
+    $(function(){
+      console.log(3);
+    })
+  </script>
+</head>
+<body>
+  <p>hello jQuery</p>
+</body>
+</html>

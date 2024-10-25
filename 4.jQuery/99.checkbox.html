@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <div class="container">
+    <div class="text-end my-3">
+      <button class="btn btn-primary">삭제</button>
+      <button class="btn btn-danger d-none" disabled>확인</button>
+    </div>
+    <ul>
+      <li class="form-check border-bottom border-3 border-primary mb-3"><input class="form-check-input invisible" type="checkbox"><h2 class="text-truncate text-center"><strong>제목</strong></h2></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">공무원의 신분과 정치적 중립성은 법률이 정하는 바에 의하여 보장된다. 국무회의는 정부의 권한에 속하는 중요한 정책을 심의한다. 교육의 자주성·전문성·정치적 중립성 및 대학의 자율성은 법률이 정하는 바에 의하여 보장된다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령·국무총리·국무위원·행정각부의 장·헌법재판소 재판관·법관·중앙선거관리위원회 위원·감사원장·감사위원 기타 법률이 정한 공무원이 그 직무집행에 있어서 헌법이나 법률을 위배한 때에는 국회는 탄핵의 소추를 의결할 수 있다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">국회의원과 정부는 법률안을 제출할 수 있다. 대법관은 대법원장의 제청으로 국회의 동의를 얻어 대통령이 임명한다. 국가유공자·상이군경 및 전몰군경의 유가족은 법률이 정하는 바에 의하여 우선적으로 근로의 기회를 부여받는다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">지방자치단체는 주민의 복리에 관한 사무를 처리하고 재산을 관리하며, 법령의 범위안에서 자치에 관한 규정을 제정할 수 있다. 신체장애자 및 질병·노령 기타의 사유로 생활능력이 없는 국민은 법률이 정하는 바에 의하여 국가의 보호를 받는다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">이 헌법시행 당시의 대법원장과 대법원판사가 아닌 법관은 제1항 단서의 규정에 불구하고 이 헌법에 의하여 임명된 것으로 본다. 정당은 법률이 정하는 바에 의하여 국가의 보호를 받으며, 국가는 법률이 정하는 바에 의하여 정당운영에 필요한 자금을 보조할 수 있다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령이 궐위된 때 또는 대통령 당선자가 사망하거나 판결 기타의 사유로 그 자격을 상실한 때에는 60일 이내에 후임자를 선거한다. 국회의원은 법률이 정하는 직을 겸할 수 없다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">모든 국민은 인간으로서의 존엄과 가치를 가지며, 행복을 추구할 권리를 가진다. 국가는 개인이 가지는 불가침의 기본적 인권을 확인하고 이를 보장할 의무를 진다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">국회의원은 국가이익을 우선하여 양심에 따라 직무를 행한다. 헌법에 의하여 체결·공포된 조약과 일반적으로 승인된 국제법규는 국내법과 같은 효력을 가진다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령의 임기는 5년으로 하며, 중임할 수 없다. 대법원과 각급법원의 조직은 법률로 정한다. 정기회의 회기는 100일을, 임시회의 회기는 30일을 초과할 수 없다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">원장은 국회의 동의를 얻어 대통령이 임명하고, 그 임기는 4년으로 하며, 1차에 한하여 중임할 수 있다. 모든 국민은 법률이 정하는 바에 의하여 납세의 의무를 진다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령이 제1항의 기간내에 공포나 재의의 요구를 하지 아니한 때에도 그 법률안은 법률로서 확정된다. 대한민국은 민주공화국이다. 모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령은 국무총리·국무위원·행정각부의 장 기타 법률이 정하는 공사의 직을 겸할 수 없다. 국회나 그 위원회의 요구가 있을 때에는 국무총리·국무위원 또는 정부위원은 출석·답변하여야 하며, 국무총리 또는 국무위원이 출석요구를 받은 때에는 국무위원 또는 정부위원으로 하여금 출석·답변하게 할 수 있다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">법관은 탄핵 또는 금고 이상의 형의 선고에 의하지 아니하고는 파면되지 아니하며, 징계처분에 의하지 아니하고는 정직·감봉 기타 불리한 처분을 받지 아니한다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">각급 선거관리위원회는 선거인명부의 작성등 선거사무와 국민투표사무에 관하여 관계 행정기관에 필요한 지시를 할 수 있다. 제1항의 지시를 받은 당해 행정기관은 이에 응하여야 한다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">대통령은 국회에 출석하여 발언하거나 서한으로 의견을 표시할 수 있다. 헌법재판소의 장은 국회의 동의를 얻어 재판관중에서 대통령이 임명한다. 정당은 그 목적·조직과 활동이 민주적이어야 하며, 국민의 정치적 의사형성에 참여하는데 필요한 조직을 가져야 한다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">국채를 모집하거나 예산외에 국가의 부담이 될 계약을 체결하려 할 때에는 정부는 미리 국회의 의결을 얻어야 한다. 공무원인 근로자는 법률이 정하는 자에 한하여 단결권·단체교섭권 및 단체행동권을 가진다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다. 대통령의 국법상 행위는 문서로써 하며, 이 문서에는 국무총리와 관계 국무위원이 부서한다. 군사에 관한 것도 또한 같다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">모든 국민의 재산권은 보장된다. 그 내용과 한계는 법률로 정한다. 모든 국민은 근로의 의무를 진다. 국가는 근로의 의무의 내용과 조건을 민주주의원칙에 따라 법률로 정한다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">탄핵결정은 공직으로부터 파면함에 그친다. 그러나, 이에 의하여 민사상이나 형사상의 책임이 면제되지는 아니한다. 모든 국민은 소급입법에 의하여 참정권의 제한을 받거나 재산권을 박탈당하지 아니한다.</p></li>
+      <li class="form-check"><input class="form-check-input invisible" type="checkbox"><p class="text-truncate">국민의 자유와 권리는 헌법에 열거되지 아니한 이유로 경시되지 아니한다. 한 회계연도를 넘어 계속하여 지출할 필요가 있을 때에는 정부는 연한을 정하여 계속비로서 국회의 의결을 얻어야 한다.</p></li>
+    </ul>
+  </div>
+  <script>
+    $("button:eq(0)").click(function(){
+      $(this).text(function(key,val){
+        return val == "삭제" ? "삭제취소" : "삭제";
+      }).next().toggleClass("d-none");
+      
+      $(":checkbox").toggleClass("invisible")
+    })
+
+    function toggleConfirmBtn(){
+      const $chbox = $("input:checkbox:gt(0)");
+
+      $("button:eq(1)").prop("disabled",!($(":checkbox:checked").length));
+      $(":checkbox:first").prop("checked", !($chbox.length - $chbox.filter(":checked").length));
+    }
+
+    // 체크박스를 (change) 선택 했을때 이벤트
+    $(":checkbox")
+      .filter(":first")
+      .change(function(){
+        $(":checkbox").prop("checked", this.checked); // 속성을 참/거짓으로 알려준다.
+        toggleConfirmBtn();
+    })
+
+    // 하위 체크박스 선택시 할일 정의
+    // 단 하나의 체크라도 활성화 되있을 경우 확인 버튼 활성화
+    // 단 하나의 체크라도 비활성화 최초의 체크박스 비활성화
+    $(":checkbox:not(:first)").change(function(i,j,k){
+      toggleConfirmBtn();
+    })
+
+    $("button:eq(1)").click(function(){
+      $(":checkbox:gt(0):checked").parent().remove();
+      $(":checkbox").prop("checked",false);
+    })
+
+  </script>
+</body>
+</html>
