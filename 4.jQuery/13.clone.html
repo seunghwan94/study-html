@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      // 이벤트도 복사하면 된다.
+      $("h2").click(function(){
+        $(this).clone().appendTo("body"); //그냥 복사
+        $(this).clone(true).appendTo("body"); // 나만 이벤트 복사
+        $(this).clone(true,true).appendTo("body"); // 하위 이벤트도 복사
+      })
+    })
+  </script>
+</head>
+<body>
+  <h2>click</h2>
+  <div onclick="alert(1)">
+    <div onclick="alert(2)">
+      <div onclick="alert(3)">
+        <div onclick="alert(4)">
+          <h3 onclick="alert(5)">클릭 미</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

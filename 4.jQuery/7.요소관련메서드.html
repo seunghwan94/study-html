@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      
+
+      // $("div").each((i,j) => {
+      //   $(j).css("color",$(j).text());
+      // });
+      $("button").click(function(){
+        $("div").text(function(i,v){
+          $(this).css("color",v);
+        })
+
+        console.log($("div").html());
+        $("body").html(function(i,item){
+          return `${item} <p>가나다라</p>`;
+        });
+
+      })
+
+    })
+
+  </script>
+</head>
+<body>
+  <div>red</div>
+  <div>green</div>
+  <div>blue</div>
+  <button>click</button>
+</body>
+</html>

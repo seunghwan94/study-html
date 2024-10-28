@@ -7,10 +7,15 @@
   <style>
     .header, .footer { max-width: 1024px; margin: 0 auto; text-align: center; padding: 30px 30px 0; }
     .write { display: flex; justify-content: space-between; }
-    #wrap { max-width: 1024px; height: 500px; border: 1px solid; margin: 0 auto; position: relative;}
+    #wrap { max-width: 1024px; height: 500px; border: 1px solid; margin: 0 auto; position: relative; display: flex;justify-content: center;  align-items: center;  
+      /* background-color : rgb(182, 182, 182);  */
+      /* opacity : 0.5; */
+    }
     #xForcus { background-color: gray; width: 1px; height: 500px; position: absolute;}
     #yForcus { background-color: gray; width: 1024px; height: 1px; position: absolute; }
     .target { width: 100px; height: 100px; position: absolute; z-index: -99; text-align: center; font-weight: bold; border: 1px solid}
+    .start { position: absolute; text-align: center;width: 100%;}
+    button { background-color: skyblue; border-radius: 15px; padding: 9px 18px; font-weight: bold; font-size: 32px; z-index: 99;opacity: 1;}
   </style>
 </head>
 <body>
@@ -24,131 +29,131 @@
   <div id="wrap">
     <div id="xForcus"></div>
     <div id="yForcus"></div>
+    <!-- <div id="start">
+      <button onclick="startBtn()">start</button>
+    </div> -->
   </div>
-<div class="footer">
-  <h2>게임 설명</h2> 
-  <ol> 
-    <li>네모가 화면에 생성되면, 클릭하여 안에 있는 숫자를 줄이는 게임입니다.</li> 
-    <li>네모 안의 숫자가 0이 되면, 해당 네모는 사라집니다.</li> 
-    <li>시간이 지날수록 네모가 더 빠르게 생성됩니다.</li> 
-    <li>Life가 0이 되면 게임이 종료됩니다. 최대한 오래 살아 남으시면 됩니다.</li> 
-  </ol>
-</div>
+  
+
+
+  <div class="footer">
+    <h2>게임 설명</h2> 
+    <ol> 
+      <li>네모가 화면에 생성되면, 클릭하여 안에 있는 숫자를 줄이는 게임입니다.</li> 
+      <li>네모 안의 숫자가 0이 되면, 해당 네모는 사라집니다.</li> 
+      <li>시간이 지날수록 네모가 더 빠르게 생성됩니다.</li> 
+      <li>Life가 0이 되면 게임이 종료됩니다. 최대한 오래 살아 남으시면 됩니다.</li> 
+    </ol>
+  </div>
 
   <script>
-      let targetCount = 0;
-      let total = 0;
-      let nowScore = 0;
-      let callSec = 1000;
-      let interval;
+    let targetCount = 0;
+    let total = 0;
+    let nowScore = 0;
+    let callSec = 1000;
+    let interval;
 
-
+    // function startBtn(){
+      document.querySelector("#wrap").style.opacity = "";
       // 마우스 움직임
       document.querySelector("#wrap").addEventListener("mousemove",e => forcus(e));
       // 처음 callback 호출 1초
       interval = setInterval(callback, callSec);
-
-      function callback(){
-        const target = document.querySelectorAll("#wrap > .target");
-        const score = document.querySelector(".score");
-        const life = document.querySelector(".life");
-
-        if(target.length > 9){
-          life.innerText = `Life : 0`;
-          
-          alert(`Score : ${nowScore}`);
-          clearInterval(interval);
-          clearInterval(end);
-        }
-        targetAdd(random('t'),random('l'),random('c'),random('s'));  
-
-
-        total = target.length;
-        life.innerText = `Life : ${10 - total}`;
-        score.innerText = `Score : ${nowScore}`;
-      }
-
-      function callbackCount(){
-        callSec -= 50;
-        console.log(callSec);
-
-        // 기존 setInterval 지움
-        clearInterval(interval);
-        // callback 0.05초씩 빠르게 다시 셋팅
-        interval = setInterval(callback, callSec);
-      }
-
       // 처음 callbackCount 호출 1초
       let end = setInterval(callbackCount,2000);
+    // }
+
+    function callback(){
+      const target = document.querySelectorAll("#wrap > .target");
+      const score = document.querySelector(".score");
+      const life = document.querySelector(".life");
+
+      if(target.length > 9){
+        life.innerText = `Life : 0`;
+        
+        alert(`Score : ${nowScore}`);
+        clearInterval(interval);
+        clearInterval(end);
+      }
+      targetAdd(random('t'),random('l'),random('c'),random('s'));  
 
 
-      // mouseMove
-      function forcus(e){
-        document.querySelector("#xForcus").style.left = e.offsetX + "px";
-        document.querySelector("#yForcus").style.top = e.offsetY + "px";
+      total = target.length;
+      life.innerText = `Life : ${10 - total}`;
+      score.innerText = `Score : ${nowScore}`;
+    }
 
-        mClick(e.offsetX, e.offsetY);
+    function callbackCount(){
+      callSec -= 50;
+      console.log(callSec);
+
+      // 기존 setInterval 지움
+      clearInterval(interval);
+      // callback 0.05초씩 빠르게 다시 셋팅
+      interval = setInterval(callback, callSec);
+    }
+
+    // mouseMove
+    function forcus(e){
+      document.querySelector("#xForcus").style.left = e.offsetX + "px";
+      document.querySelector("#yForcus").style.top = e.offsetY + "px";
+
+      mClick(e.offsetX, e.offsetY);
+    }
+
+    // random (위치 랜덤)
+    function random(ck){
+
+      if (ck=='t'){
+        range = 400;
+      }
+      if (ck=='l'){
+        range = 924;
+      }
+      if (ck=='c'){
+        range = 999999;
+      }
+      if (ck=='s'){
+        range = 1000;
       }
 
-      // random (위치 랜덤)
-      function random(ck){
+      return Math.floor(Math.random()*range);
+    }
 
-        if (ck=='t'){
-          range = 400;
-        }
-        if (ck=='l'){
-          range = 924;
-        }
-        if (ck=='c'){
-          range = 999999;
-        }
-        if (ck=='s'){
-          range = 1000;
-        }
+    // target add
+    function targetAdd(t,l,c,s){
+      let str = `<div class="target" id=target-${targetCount++} style="left:${l}px; top:${t}px; background-color: #${c}">${s}<div>`;
+      document.querySelector('#wrap').innerHTML += str;
+    }
+    
+    function mClick(x, y){
+      document.querySelector("#wrap").addEventListener("click",function(e){
+        const target = document.querySelectorAll("#wrap > .target");
 
-        return Math.floor(Math.random()*range);
-      }
+        for (let i = 0; i < target.length; i++){
+          let targetPoint = getComputedStyle(target[i]);
 
-      // target add
-      function targetAdd(t,l,c,s){
-        let str = `<div class="target" id=target-${targetCount++} style="left:${l}px; top:${t}px; background-color: #${c}">${s}<div>`;
-        document.querySelector('#wrap').innerHTML += str;
-      }
+          let targetTop = targetPoint.left.substring(0,targetPoint.left.indexOf("p"));
+          let targetLeft = targetPoint.top.substring(0,targetPoint.top.indexOf("p"));
+          
+          if( targetLeft < y && y < Number(targetLeft)+100 && targetTop < x && x < Number(targetTop)+100){
+            tagetLife = target[i].innerText
+            if(tagetLife<=0){
+              const score = document.querySelector(".score");
+              const life = document.querySelector(".life");
+              
+              target[i].remove();
 
-      
-
-      
-
-
-
-      function mClick(x, y){
-        document.querySelector("#wrap").addEventListener("click",function(e){
-          const target = document.querySelectorAll("#wrap > .target");
-
-          for (let i = 0; i < target.length; i++){
-            let targetPoint = getComputedStyle(target[i]);
-  
-            let targetTop = targetPoint.left.substring(0,targetPoint.left.indexOf("p"));
-            let targetLeft = targetPoint.top.substring(0,targetPoint.top.indexOf("p"));
-            
-            if( targetLeft < y && y < Number(targetLeft)+100 && targetTop < x && x < Number(targetTop)+100){
-              tagetLife = target[i].innerText
-              if(tagetLife<=0){
-                const score = document.querySelector(".score");
-                const life = document.querySelector(".life");
-                
-                target[i].remove();
-
-                nowScore += 1;
-                
-                life.innerText = `Life : ${10 - total}`;
-                score.innerText = `Score : ${nowScore}`;
-              }
-              target[i].innerText -= 1;
+              nowScore += 1;
+              
+              life.innerText = `Life : ${10 - total}`;
+              score.innerText = `Score : ${nowScore}`;
             }
+            target[i].innerText -= 1;
           }
-        });
-      }
+        }
+      });
+    }
   </script>
 </body>
 </html>

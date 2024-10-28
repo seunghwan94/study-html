@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      $("button:first").click(function(){
+        $(this).next().html(function(){
+          return $(this).html() + `<p>문장${$(this).find("p").length+1}</p>`;
+        }); 
+      })
+    })
+
+  </script>
+</head>
+<body>
+    <button> click </button>
+    <div></div>
+</body>
+</html>

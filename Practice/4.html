@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+  <style>
+    .box {  height: 500px; border: 1px solid; position: relative;}
+    .box > .target { height: 100px; width: 100px;border: 1px solid; text-align: center; font-weight: bold; position: absolute;}
+    .layer { z-index: 100; background-color: rgb(180, 180, 180); position: absolute; left: 0; top: 0; width: 100%; height: 100%;display: flex;align-items: center;justify-content: center;}
+    .hide {display: none; z-index: 100;}
+  </style>
+  <script>
+    $(function(){
+      let counter = 1;
+      let score = 0;
+
+      // start 버튼 
+      $("#start").click(function(){
+        $(this).parent().addClass('hide');
+        const start = setInterval(function(){
+          add();
+          if($(".target").length == 10){
+            clearInterval(start);
+            // alert(`Score : ${score}`);
+            // $(".layer").removeClass('hide'); 
+          }
+        }, 1000);
+
+        $(".target").click(function(){
+          console.log($(this));
+          // $(this).children().each(function(k,v){
+          //   console.log($(this));
+          //   let left = parseInt($(this).css("left"));
+          //   let top = parseInt($(this).css("top"));
+          //   // console.log(k,v)
+          //   if(left < event.offsetX && event.offsetX < left+100 && 
+          //       top < event.offsetY && event.offsetY < top +100){
+          //         console.log(left,top);
+          //   //   // console.log($(v).eq(k).text());
+          //   //   $(v).text($(v).text()-1);
+          //   //   if($(this).text()==0){
+          //   //   }
+          //   }                
+            
+          // });
+        })
+      })
+
+      // 네모 추가
+      function add(){
+        let options = rand();
+        let str = '';
+        str += `<div class="target" id="target${counter++}" 
+                style="top:${options['top']}px; left:${options['left']}px; 
+                background-color:#${options['color']};">${options['stamina']}</div>`
+        $(".box").append(str);
+      }
+      
+      // 네모 랜덤
+      function rand(){
+        // console.log($(".box").width(), $(this).width(), $(document).width())
+
+        return {
+          'top' : Math.floor(Math.random()*($(".box").width()-110)),
+          'left' : Math.floor(Math.random()*($(".box").width()-100)),
+          'color' : Math.floor(Math.random()*999999),
+          'stamina': Math.floor(Math.random()*1000)
+        };
+      }
+    
+      // 네모 제거
+      
+
+      // start 버튼 추가
+
+
+    })
+    
+  </script>
+</head>
+<body>
+  <div id="wrap" class="container">
+    <header class="clearfix">
+      <h3 class="text-center mt-3 fw-bold">네모 지우기</h3>
+      <h3 class="float-start fw-bold">Life : 10</h3>
+      <h3 class="float-end fw-bold">Score : 0</h3>
+    </header>
+    <main>
+      <div class="box">
+        <div class="layer">
+          <button id="start" type="button" class="btn btn-primary btn-lg">Start</button>
+        </div>
+      </div>
+    </main>
+    <div class="footer ">
+      <h2 class="text-center">게임 설명</h2> 
+      <ol> 
+        <li>네모가 화면에 생성되면, 클릭하여 안에 있는 숫자를 줄이는 게임입니다.</li> 
+        <li>네모 안의 숫자가 0이 되면, 해당 네모는 사라집니다.</li> 
+        <li>시간이 지날수록 네모가 더 빠르게 생성됩니다.</li> 
+        <li>Life가 0이 되면 게임이 종료됩니다. 최대한 오래 살아 남으시면 됩니다.</li> 
+      </ol>
+    </div>
+  </div>
+</body>
+</html>

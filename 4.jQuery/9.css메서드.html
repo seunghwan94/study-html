@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    .box{ width: 100px; height: 100px;}
+    .box1{background-color: red;}
+    .box2{background-color: green;}
+    .box3{background-color: blue;}
+    .my-box {width: 300px;height: 300px; padding: 50px; margin: 100px; border: 20px solid; background-color: pink;}
+  </style>
+  <script>
+    $(function(){
+      $("button:eq(0)").click(function(){
+        $(".box").css("width", parseInt($(".box").css("width")) * 2);
+      })
+
+      console.log($(".my-box").width());      // width 값
+      console.log($(".my-box").innerWidth()); // padding 까지
+      console.log($(".my-box").outerWidth()); // border 까지
+      console.log($(".my-box").height());
+      console.log($(".my-box").innerHeight());
+      console.log($(".my-box").outerHeight());
+      
+
+
+    });
+  </script>
+</head>
+<body>
+  <div class="boxes">
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+
+  </div>
+  <div class="btns">
+    <button>width class</button>
+  </div>
+  <div class="my-box"></div>
+</body>
+</html>

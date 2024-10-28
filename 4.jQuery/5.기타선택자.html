@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    $(function(){
+      console.log($("div:nth-child(1)").text());
+      console.log($("div:nth-child(1)").add("div:nth-child(2)").end().text());
+      console.log($("body").children("div"));
+
+      // is.hasClass, hasAttr
+      // function의 this는 자기랑 가장 가까운 객체를 선택한다. 
+      // ()=>{} arrow function의 this는 
+      console.log($("div").is(".abcd"));
+      $("div").each(function (i, item) {
+        // console.log(i,item, $("div")[i], this);
+        console.log($(item).is(".abc"));
+        
+      });
+      
+
+
+      $("div").each(function(){
+        const $this = $(this);
+        $this.click(function(){
+          $(this) === $this;
+        });
+      })
+
+    })
+
+  </script>
+</head>
+
+<body>
+  <div class="abc">document1</div>
+  <div class="def">document2</div>
+  <div class="def">document3</div>
+</body>
+</html>

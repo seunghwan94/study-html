@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+</head>
+<style>
+   div, .target {border: 1px solid; padding:.5em;}
+</style>
+<script>
+  // append()  : 첫번째 자식 뒤
+  // prepend() : 첫번째 자식 앞
+  // after()   : 같은 위치 뒤
+  // before()  : 같은 위치 앞
+  $(function(){
+    let counter = 1;
+    const $target = $(".target");
+    $("button:eq(0)").click(function(){
+      $target.append($(`<div data-no="${++counter}">대상${counter}</div>`));
+    })
+    $("button:eq(1)").click(function(){
+      $target.prepend($(`<div data-no="${++counter}">대상${counter}</div>`));
+    })
+    $("button:eq(2)").click(function(){
+      $target.after($(`<div data-no="${++counter}">대상${counter}</div>`));
+    })
+    $("button:eq(3)").click(function(){
+      $target.before($(`<div data-no="${++counter}">대상${counter}</div>`));
+    })
+    $("button:eq(4)").click(function(){
+      // $(`<div data-no="${++counter}">대상${counter}</div>`).appendTo(".target");
+
+      $("<div>").attr("data-no",++counter).text("대상"+counter).appendTo(".target");
+    })
+
+    // $(셀렉터).append("태그");
+
+    // $("태그").appendTo("셀렉터");
+
+  })
+</script>
+<body>
+  <button>append</button>
+  <button>prepend</button>
+  <button>after</button>
+  <button>before</button>
+  
+  <button>appendTo</button>
+
+
+  <div>
+    <div class="target" data-no="1">대상</div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    // $("selector").each(할일);
+    // $.each(객체, 할일)
+
+    // jQuery에 filter $("selector").filter(?); ? = 문자열
+    
+    // filter(?); predicate
+    let arr = [1,2,3,4];
+    arr = arr.filter( v => v % 2 == 1 );
+    let arr1 = arr.filter( v => v % 2 == 1 ).forEach(v => console.log(v)); // return 사용 불가능
+    let arr2 = arr.filter( v => v % 2 == 1 ).map(v => v); // return 사용하고 싶을때 map => 바닐라 용
+    console.log(arr);
+    console.log(arr1);
+    console.log(arr2);
+    
+    // 배열 => 객체, 객체 => 배열로 바꿀때 많이 사용 : 유효성 검사할때 사용하는게 좋음
+    let obj = { x: 10, y: 20};
+    obj = $.map(obj, function(v,i){
+      console.log(v, i);
+      return v;
+    })
+    console.log(obj);
+    // obj.map(function(v,i){
+    //   console.log(v,i);
+    // })
+    
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
