@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    // (bind,live,delegate), (unbind,die,undelegate) => on, off 으로 대체 됨
+    $(function(){
+
+      // on
+      $('button:eq(0)').on("click",function(){
+        console.log("click 감지");
+      })
+      $('button:eq(1)').on("mouseenter focus",function(){
+        console.log("이벤트 감지 추가");
+      })
+      //★동적으로 동작했을때 위임을 하는 역할로 생각
+      $('div').on("click","p",function(){
+        console.log("div 클릭했을때 button에 이벤트 위임");
+      })
+      $('button:eq(3)').on("click",function(){
+        console.log("click event");
+      })
+      // off 
+      $("button").off("click");
+
+    })
+  </script>
+</head>
+<body>
+  <button>이벤트 감지</button>
+  <button>이벤트 감지 추가</button>
+  <div style="background-color: red;padding:20px;">
+    <button>이벤트 위임</button>
+    <p>이벤트 위임</p>
+  </div>
+  <button>test4</button>
+</body>
+</html>

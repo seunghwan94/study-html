@@ -22,9 +22,9 @@
       $("#start").click(function(){
         $(this).parent().addClass('hide');
         const start = setInterval(function(){
-          add();
-          if($(".target").length == 10){
-            clearInterval(start);
+          if($(".target").length < 10){
+            add();
+            // clearInterval(start);
             // alert(`Score : ${score}`);
             // $(".layer").removeClass('hide'); 
           }
@@ -32,21 +32,21 @@
 
         $(".target").click(function(){
           console.log($(this));
-          // $(this).children().each(function(k,v){
-          //   console.log($(this));
-          //   let left = parseInt($(this).css("left"));
-          //   let top = parseInt($(this).css("top"));
-          //   // console.log(k,v)
-          //   if(left < event.offsetX && event.offsetX < left+100 && 
-          //       top < event.offsetY && event.offsetY < top +100){
-          //         console.log(left,top);
-          //   //   // console.log($(v).eq(k).text());
-          //   //   $(v).text($(v).text()-1);
-          //   //   if($(this).text()==0){
-          //   //   }
-          //   }                
+          $(this).children().each(function(k,v){
+            console.log($(this));
+            let left = parseInt($(this).css("left"));
+            let top = parseInt($(this).css("top"));
+            // console.log(k,v)
+            if(left < event.offsetX && event.offsetX < left+100 && 
+                top < event.offsetY && event.offsetY < top +100){
+                  console.log(left,top);
+            //   // console.log($(v).eq(k).text());
+            //   $(v).text($(v).text()-1);
+            //   if($(this).text()==0){
+            //   }
+            }                
             
-          // });
+          });
         })
       })
 
@@ -67,7 +67,7 @@
         return {
           'top' : Math.floor(Math.random()*($(".box").width()-110)),
           'left' : Math.floor(Math.random()*($(".box").width()-100)),
-          'color' : Math.floor(Math.random()*999999),
+          'color' : Math.floor(Math.random()*parseInt("ffffff", 16)),
           'stamina': Math.floor(Math.random()*1000)
         };
       }

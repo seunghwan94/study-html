@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <script>
+    // 이벤트 강제 실행
+    $(function(){ㄴ
+      // 버튼 클릭안해도 바로 실행 됨 
+      $("button").click(function(){
+        alert($(this).text());
+      }).trigger("click").click(); // 두번 실행 됨
+    })
+
+  </script>
+</head>
+<body>
+  <button>클릭 미</button>
+</body>
+</html>

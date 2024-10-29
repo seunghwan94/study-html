@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    .inner {width: 100px; height: 100px; background-color: black;}
+    .outer {padding: 50px; background-color: gray;}
+  </style>
+  <script>
+    // getter로 가져오면 문자열로 동작하고,
+    // setter로 가져오면 객체(선택한)를 return 한다 => 체이닝 가능
+
+
+    // trigger (sql)
+    // 쿼리를 실행할때 다른 테이블에 연쇄적으로 작동되는 시발점이라 생각하면 된다.
+    // trigger (jQuery)
+    // trigger에 getter를 이용하여 이벤트 유발 
+
+    $(function(){
+      $(".outer").mouseenter(function(){
+        $(this).after("<h3>mouseenter</h3>");
+      }).mouseover(function(){
+        // 요소안에 다른요소에 갈때마다 연쇄적으로 작동되서 잘 사용 안 함.
+        $(this).after("<h3>mouseover</h3>"); 
+      })
+    })
+
+
+  </script>
+</head>
+<body>
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+</body>
+</html>

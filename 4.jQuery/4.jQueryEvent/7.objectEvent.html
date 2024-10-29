@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    h2 {border: 5px solid black; padding: 20px; background-color: lightcoral;}
+  </style>
+  <script>
+    //  이벤트 객체
+    //  이벤트 전파(전달)란 : 같은 이벤트 타입이 겹쳐있을 때
+    //    기본값 : 버블링 (하위 > 상위)
+    //    변경 가능 값 : 캡쳐링 (상위 > 하위)
+
+    //  event.type
+    //  event.target
+    //  event.preventDefault() : 이벤트 막기 (이벤트 전달 O)
+    //  event.stopPropagation() : 이벤트 전파(전달) 막기
+    //  return false : event.preventDefault(); + event.stopPropagation(); 
+
+    $(function(){
+
+      $("h2").click(function(){
+        $(this).css("background-color", "lightpink");
+      })
+
+      $("a").click(function(){
+        event.preventDefault(); 
+        event.stopPropagation();
+        // return false; // 둘다 방지
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <h2>
+    <a href="https://www.naver.com">네이버</a>
+  </h2>
+</body>
+</html>

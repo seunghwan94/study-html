@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <title>Document</title>
+  <style>
+    .f {width: 115px;height: 140px; position: absolute;}
+  </style>
+  <script>
+    // event keycode를 확인 할 것
+    $(function(){
+      $(window).keydown(function(){
+        // 왼쪽이동 a, left
+        const $pos = $(".f").position();
+        switch(event.keyCode){
+          case 'A'.charCodeAt(0):
+          case 37: 
+            $(".f").css("left",$pos.left-3);
+            break;
+          case 'W'.charCodeAt(0):
+          case 38: 
+            $(".f").css("top",$pos.top-3);
+            break;
+          case 'D'.charCodeAt(0):
+          case 39: 
+            $(".f").css("left",$pos.left+3);
+            break;
+          case 'S'.charCodeAt(0):
+          case 40: 
+            $(".f").css("top",$pos.top+3);
+            break;
+        }
+      })
+    })
+  </script>
+</head>
+<body>
+  <div class="f">
+    <img src="../../img/pngwing.png">
+  </div>
+</body>
+</html>

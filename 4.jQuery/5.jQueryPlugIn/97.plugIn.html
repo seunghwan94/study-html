@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <link rel="icon" href="../../img/favicon.ico">
+  <title>Document</title>
+  <style>
+    img {width: 98%;}
+  </style>
+  <script>
+    $(function(){
+
+      $("button").click(function(){
+        const query = $(this).prev().val();
+        REST_API_KEY = 'fa7a8d2befe39379a00a05af88f26e5f';
+        if(!query) return;
+
+        const data = {
+          query,
+          size:24
+        };
+
+        $.ajax({
+          url: "https://dapi.kakao.com/v3/search/book",
+          data,
+          beforeSend : function(xhr){
+            xhr.setRequestHeader("Authorization",`KakaoAK ${REST_API_KEY}`)
+          },
+          success : function(data){
+            let arr = data['documents'];
+            let str = "";
+            for(let i=0; i < arr.length; i++){
+
+              str += `<div class=" col-2 ">
+                        <div class="card m-2">
+                          <div class="card-header">
+                            <img src="${arr[i]['thumbnail']}">
+                          </div>
+                          <div class="card-body">
+                            <p class="small text-truncate">제목: ${arr[i]['title']}</p>
+                            <p class="small text-truncate">저자: ${arr[i]['authors']}</p>
+                            <p class="small text-end">가격: ${arr[i]['price']}</p>
+                          </div>
+                        </div>
+                      </div>`
+
+
+
+
+
+              console.log(data['documents'][i]);
+            }
+            $(".row").append(str);
+          }
+
+        })
+      })
+    })
+
+  </script>
+</head>
+<body>
+  <div class="container text-center">
+    <input type="text "><button>Search</button>
+  </div>
+  <div class="container">
+    <div class="row">
+      
+      
+    </div>
+  </div>
+</body>
+</html>

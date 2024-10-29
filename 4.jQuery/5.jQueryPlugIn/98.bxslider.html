@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+  <title>Document</title>
+  <style>
+    .slider-wrap {
+      width: 1000px;
+      margin: 0 auto;
+    }
+    .slider-wrap img{
+      max-width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- bxSlider api 적용 -->
+  <div class="slider-wrap">
+    <div>
+      <img src="https://bxslider.com/assets/plant-bd76206132f914fc54fd28f9794f7fe346bb8b9a9d16dd5de830b93f365eea9c.jpg">
+      <img src="https://bxslider.com/assets/succulents-7b5637dbc01af703069905a7991d9e7e7d27c680fa885fe3d6c713c1f77c0f92.jpg">
+      <img src="https://bxslider.com/assets/daisies-aef04136667e60d9190943f4c6cd605043e67188247ffe928500edfd29b0a158.jpg">
+    </div>
+  </div>
+  <script>
+    $(".slider-wrap div").bxSlider({
+      mode: 'fade',
+      minSlides: 2
+    });
+
+  </script>
+</body>
+</html>
