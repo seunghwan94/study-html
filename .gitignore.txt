@@ -1,1 +1,1 @@
-aws key
+./aws key
