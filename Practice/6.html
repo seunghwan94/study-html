@@ -9,11 +9,12 @@
     <title>Document</title>
     <style>
       /* 107 112*/
-      .wrap{ min-height: calc(100vh - 220px);}
+      .wrap{ min-height: calc(100vh - 245px);}
       .btn { position: absolute; right: 0;top:0; height: 100%;display: flex; align-items: center}
-      .slider {
+      .slider ul{
         position: relative;
         transition: all 1s;
+        
         /* transform: translateX(-1296px); */
       }
       
@@ -27,7 +28,7 @@
       $(function(){
         $(".btn").click(function(){
           console.log($(".slider").width());
-          $(".slider").css("transform","translateX(-1000px)");
+          $(".slider ul").css("transform","translateX(-1000px)");
           // console.log();
           
         });
@@ -56,8 +57,8 @@
     </header>
     <div class="container wrap">
       <main>
-        <div class="slider">
-          <ul class="list-group list-group-horizontal">
+        <div class="slider overflow-hidden">
+          <ul class="list-group list-group-horizontal ">
 
             <li class="list-group-item col-3">
               <div class="m-2">
