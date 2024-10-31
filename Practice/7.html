@@ -29,24 +29,29 @@
       z-index: 1;
       display: none;
     }
-    main > .container { position: relative; }
+    .container { position: relative; }
     .container > div { transition: all 1s; }
-    .btn-slider-right {
+    
+    .div-slider-right {
       position: absolute;
       right: 0;
       top : 0;
-      width: 15%;
-      height: 60%;
-      opacity: 0.7;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
-    .btn-slider-left {
+    .div-slider-left {
       position: absolute;
       left: 0;
       top : 0;
-      width: 15%;
-      height: 60%;
-      opacity: 0.7;
+      height: 100%;
+      display: flex;
+      align-items: center;
     }
+    .overflow-hidden { 
+      margin: 0 auto;
+    }
+
   </style>
 </head>
 <body>  
@@ -89,117 +94,100 @@
     </header>
     
     <main>
-      <div class="container">
-        <!-- 이게 하는 일이 많아 좀 나눠야 한다. 나누자.... 여기부터 하자 -->
-        <div class="list-group list-group-horizontal">
+      <div class="overflow-hidden col-8">
 
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">1
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNhVODaF0AmwDsuV7LB_yz6-u8nvuD7QLlA&s">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">2
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">3
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDl9gYj41uMa9GjNGRUYE5MQ7r_cLKSZGJg&s">
-              </div>
-            </div>
-          </div>
-
-
-
-
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">4
-                <img src="data:image/jpeg;base64,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">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">5
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">6
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSA1oKNR0SgYbEMSW1VrdzZN-dayLNmEHy7Q&s">
-              </div>
-            </div>
-          </div>
-
-
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">7
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNhVODaF0AmwDsuV7LB_yz6-u8nvuD7QLlA&s">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">8
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
-              </div>
-            </div>
-          </div>
-
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">9
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSA1oKNR0SgYbEMSW1VrdzZN-dayLNmEHy7Q&s">
-              </div>
-            </div>
-          </div>
+        <div class="container">
           
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">
-                <img src="data:image/jpeg;base64,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">
+          <div class="list-group list-group-horizontal">
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">1
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNhVODaF0AmwDsuV7LB_yz6-u8nvuD7QLlA&s">
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">2
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="col-4">
-            <div class="card m-2">
-              <div class="header">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDl9gYj41uMa9GjNGRUYE5MQ7r_cLKSZGJg&s">
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">3
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlDl9gYj41uMa9GjNGRUYE5MQ7r_cLKSZGJg&s">
+                </div>
               </div>
             </div>
+
+
+
+
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">4
+                  <img src="data:image/jpeg;base64,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">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">5
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">6
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSA1oKNR0SgYbEMSW1VrdzZN-dayLNmEHy7Q&s">
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">7
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzNhVODaF0AmwDsuV7LB_yz6-u8nvuD7QLlA&s">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">8
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWndbP-W-LsTkEM96_CEfFQRXw_VcuWX4hEA&s">
+                </div>
+              </div>
+            </div>
+
+            <div class="col-4">
+              <div class="card m-2">
+                <div class="header">9
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSA1oKNR0SgYbEMSW1VrdzZN-dayLNmEHy7Q&s">
+                </div>
+              </div>
+            </div>
+
           </div>
 
-
+          <div class="div-slider-left">
+            <button class="btn btn-secondary py-5"> < </button>
+          </div>
+          <div class="div-slider-right">
+            <button class="btn btn-secondary py-5"> > </button>
+          </div>
         </div>
+
       </div>
-      <button class="btn btn-light btn-slider-left"> < </button>
-      <button class="btn btn-light btn-slider-right"> > </button>
     </main>
     
     <footer class="bg-light text-center p-4">
@@ -218,20 +206,19 @@
       $(".target").stop().slideUp(100);
     })
     
-    $(".btn-slider-left").click(function(){
+    $(".div-slider-left").click(function(){
       setTimeout(function(){
         let nowX = $.trim($(".container > div").css("transform").split(",")[4])
         if (nowX == '' || nowX >= 0) return;
-        $(".container > div").stop().css("transform", `translateX(${Number(nowX)+$(".container").width()}px)`);
+        $(".container > div:eq(0)").css("transform", `translateX(${Number(nowX)+$("main > div").width()-24}px)`);
       },300);
     })
 
-    $(".btn-slider-right").click(function(){
+    $(".div-slider-right").click(function(){
       setTimeout(function(){
         let nowX = $.trim($(".container > div").css("transform").split(",")[4])
-        if (nowX < 2 * -$(".list-group").outerWidth()) return;
-
-        $(".container > div").stop().css("transform", `translateX(${nowX-$(".container").width()}px)`);
+        if (nowX <= 2 * -$(".list-group").innerWidth()) return;
+        $(".container > div:eq(0)").css("transform", `translateX(${nowX-$("main > div").width()+24}px)`);
       },300);
     })
 
