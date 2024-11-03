@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+    <title>Document</title>
+    <style>
+        .target {
+            position: absolute;
+            background: url("../img/pngwing.png") no-repeat;
+            width: 120px;
+            height: 130px;
+        }
+    </style>
+</head>
+<body>
+    <div class="target"></div>
+    <script>
+        let position = [0,-120,-240,-120];
+        let target = 0;
+
+        let standard = setInterval(function(){
+            $(".target").css("background-position-x", position[target++] );
+            if( target == 4) target= 0;
+        },300)
+
+        $(window).keydown(function(e){
+            console.log(e);
+            if(e.type == "keyleft")
+                $(".target").css("background-position-y","-=130");
+                // $(".target").css("background-position-x","-=120");
+        })
+    </script>
+</body>
+</html>
