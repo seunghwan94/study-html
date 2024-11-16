@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.17/jquery.bxslider.min.js" integrity="sha512-LaBO0tZh1+6Ebk+EnHt/WsGM0UnmkCXfQ1rfhGmpa5MXUdslNuSSELBRcteHKz4k4ny+Op10Ax2fPoTNq+VcUg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css">
+  <title>test</title>
+  <link rel="icon" href="../5.layout/images/favicon.ico" type="image/x-icon">
+  <style>
+    .login-signin { height: 600px; }
+    .logo-img { width: 20px; }
+    .nav-link { color: rgba(248, 249, 250 , 1)}
+    ul > span { color : #adadad }
+    .main-menu { position: relative; } 
+    
+    .sub-menu { position: absolute; margin: 0 auto; width: 100%; z-index: 3; display: none; }
+    .sub-menu-bg { position: absolute; height: 40%; width: 100%; z-index: 2; display: none; }
+
+    .hide { display: none;}
+
+    .card { height: 450px;}
+    .slider > img { width: 100%;}
+    .bx-wrapper { -webkit-box-shadow: 0 0 0;}
+    .card-body { padding:0; margin:0; }
+
+    .small { font-size: 12px; }
+  </style>
+</head>
+<body>
+    <div class="wrap">
+        <header class="bg-secondary">
+            <div class="container d-flex align-items-center justify-content-center">
+                <a href="#">
+                    <img class="logo-img" src="../5.layout/images/favicon.ico">
+                </a>
+                <nav class="main-menu navbar navbar-expand-sm bg-secondary navbar-light">
+                    <div class="container-fluid">
+                        <ul class="navbar-nav ">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">스토어</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link" href="#">mac</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">ipad</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">iphone</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">watch</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">vision</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">airpods</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">tv 및 홈</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">엔터테인먼트</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">액세서리</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">고객지원</a>
+                            </li>
+                        </ul>
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-magnifying-glass m-3" style="color: #ffffff;"></i>
+                        </a>
+                        <a class="nav-link" href="#">
+                            <i class="fa-solid fa-briefcase m-3" style="color: #ffffff;"></i>
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="sub-menu w-5">
+                <div class="container d-flex justify-content-center">
+                    <ul class="navbar-nav fw-bold fs-4 me-5">
+                        <span class="fs-6 fw-normal mb-3">쇼핑하기</span>
+                        <li>최신제품 쇼핑하기</li>
+                        <li>mac</li>
+                        <li>ipad</li>
+                        <li>iphone</li>
+                        <li>apple watch</li>
+                        <li>apple vision pro</li>
+                        <li>액세서리</li>
+                    </ul>
+                    <ul class="navbar-nav fw-bold me-5">
+                        <span class="mb-3">빠른 링크</span>
+                        <li>매장 찾기</li>
+                        <li>주문 상태</li>
+                        <li>apple trade in</li>
+                        <li>할부 방식</li>
+                    </ul>
+                    <ul class="navbar-nav fw-bold me-5">
+                        <span class="mb-3">특별 할인 쇼핑하기</span>
+                        <li>인증 리퍼비쉬 제품</li>
+                        <li>교육</li>
+                        <li>비즈니스</li>
+                    </ul>
+                </div>
+            </div> 
+            <div class="sub-menu-bg bg-secondary"></div>
+        </header>
+
+        <main class="container mb-5 pt-2">
+
+            <form name="form" method="post" class="mx-auto col-8 col-sm-8 col-md-6 col-lg-5 col-xl-4 col-xxl-3 card p-5 mt-4 login-signin" style="height: 603px;">
+              <h1 class="text-center mt-5 mb-5 fw-bold">Sign in</h1>
+              <input type="text" class="form-control my-3" id="id" placeholder="아이디" name="id">
+              <input type="password" class="form-control my-3" id="pw" placeholder="비밀번호" name="pw">
+              <div class="form-check form-switch mb-4">
+                <input class="form-check-input" type="checkbox" id="mySwitch" name="remember-id" value="yes">
+                <label class="form-check-label" for="mySwitch">아이디 기억</label>
+              </div>
+              <button class="btn btn-secondary mt-1 mb-5">로그인</button>
+            </form>
+        </main>
+
+        <footer class="bg-secondary text-center p-4">
+            <p class="small">사업자등록번호 : 120-81-84429 | 통신판매업신고번호 : 제 2011-서울강남-00810호
+                대표이사 : PETER DENWOOD | 주소 : 서울 특별시 강남구 영동대로 517
+                대표전화 : 080-330-8877 | 팩스 : 02-6928-0000
+                ^ Apple Intelligence는 Siri 및 기기 언어를 미국 영어로 설정한 모든 M1 이후 Mac 모델에서 베타로 사용할 수 있으며, macOS Sequoia 업데이트를 통해 제공됩니다. 영어(오스트레일리아, 캐나다, 뉴질랜드, 남아프리카 공화국, 영국) 언어 지원은 올 12월 제공됩니다. 내년까지 계속해서 기능 및 지원 언어를 추가해 나갈 예정입니다. 추가 예정인 지원 언어는 한국어, 중국어, 영어(인도, 싱가포르), 프랑스어, 독일어, 이탈리아어, 일본어, 포르투갈어, 스페인어, 베트남어 등입니다.</p>
+            <address>서울 특별시 구로구 디지털로 306 대륭포스트 2차 2층 더조은 아카데미</address>
+            <p>All rights reserved &copy; copyright.</p>
+        </footer>
+    </div>
+
+    <script>
+        $("header > div, .sub-menu-bg").hover(function(){
+            $(".sub-menu, .sub-menu-bg").stop().slideDown(200);
+        },function(){
+            $(".sub-menu, .sub-menu-bg").stop().slideUp(200);
+        })
+
+        $('.slider').bxSlider({
+            slideWidth: 300,
+            minSlides: 2,
+            maxSlides: 5,
+            moveSlides: 1,
+            slideMargin: 10
+        });
+
+    </script>
+</body>
+</html>
