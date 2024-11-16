@@ -15,7 +15,7 @@
     .logo-img {width: 240px; height: 80px;}
   </style>
 </head>
-<body>
+<body class="bg-dark">
   <div class="wrap">
     <header class="container-fluid bg-secondary pb-3">
       <div class="container clearfix p-2">
@@ -30,39 +30,57 @@
           <li class="nav-item"><a class="nav-link text-white mx-3" href="mypage.html">MyPage</a></li>
           <li class="nav-item"><a class="nav-link text-white mx-3" href="post.html?category=1">공지사항</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white mx-3" data-bs-toggle="dropdown" role="button">게시판</a>
+            <a class="nav-link dropdown-toggle text-white mx-3" data-bs-toggle="dropdown" href="post.html?category=2" role="button">게시판</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="post.html?category=2">자유게시판</a>
-              <a class="dropdown-item" href="post.html?category=3">자료실</a>
+              <a class="dropdown-item" href="post.html?category=3">자유게시판</a>
+              <a class="dropdown-item" href="post.html?category=4">자료실</a>
               <a class="dropdown-item" href="gallery.html">갤러리</a>
             </div>
           </li>
         </ul>
       </nav>
     <main class="container">
-      <div class="row">
-        <div class="col-md-9">
-          <div class="p-3">
-            <h1>index</h1>
-          </div>
+      <div class="my-3 col-md-9">
+        <label for="title" class="form-label text-white mt-3">
+          <i class="fa-solid fa-heading" style="color: #48587f;"></i>
+          <b>Title</b>
+        </label>
+        <input type="text" class="form-control" id="title" placeholder="title" name="title" disabled>
+
+        <label for="content" class="form-label text-white mt-3">
+          <i class="fa-solid fa-pen-fancy"  style="color: #48587f;"></i>
+          <b>Content</b>
+        </label>
+        <textarea class="form-control" rows="20" id="content" name="content" disabled></textarea>
+
+        
+        <label for="create-date" class="form-label text-white mt-3 me-4">
+          <i class="fa-regular fa-calendar-days"  style="color: #48587f;"></i>
+          <b class="text-white">Create Date 2024.04.03</b>
+        </label>
+        <label for="create-date" class="form-label text-white mt-3 me-4">
+          <i class="fa-regular fa-calendar-days"  style="color: #48587f;"></i>
+          <b class="text-white">Update Date 2024.04.03</b>
+        </label>
+
+        <span class="text-white fw-bold">
+          <i class="fa-solid fa-eye" style="color: #48587f;"></i>
+          0
+        </span>
+
+        <label for="writer" class="form-label text-white mt-3">
+          <i class="fa-solid fa-user-pen"  style="color: #48587f;"></i>
+          <b>Writer</b>
+        </label>
+        <input type="text" class="form-control" id="writer" placeholder="writer" name="writer" disabled>
+        
+        <hr>
+        
+        <div class="text-center">
+          <a href="list" class="btn btn-primary">목록</a>
         </div>
-        <div class="col-md-3">
-          <div class="p-3 d-grid gap-2">
-            <!-- <a href="signin.html" class="btn btn-secondary btn-block">로그인</a>
-            <div class="small clearfix">
-              <a href="signup.html" class="small float-start text-decoration-none">회원가입</a>
-              <a href="signup.html" class="small float-end text-decoration-none">아이디/비밀번호 찾기</a>
-            </div> -->
-            <p><a href="mypage.html" class="text-decoration-none text-dark"><strong>홍길동</strong>님 환영합니다.</a></p>
-            <div class="small clearfix">
-              <a href="logout.html" class="small float-start text-decoration-none">로그아웃</a>
-              <a href="mypage.html" class="small float-end text-decoration-none">마이페이지</a>
-            </div>
-          </div>
-        </div>
+
       </div>
-
-
     </main>
     <footer class="bg-secondary text-center p-4">
       <address>서울 특별시 구로구 디지털로 306 대륭포스트 2차 2층 더조은 아카데미</address>
